@@ -1,4 +1,4 @@
-package com.cloud.ci;
+package com.cloud.ci.controller;
 
 import org.junit.Before;
 import org.junit.Test;

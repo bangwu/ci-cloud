@@ -1,4 +1,4 @@
-package com.cloud.ci;
+package com.cloud.ci.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
