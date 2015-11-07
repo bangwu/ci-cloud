@@ -10,7 +10,6 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.cloud.ci"/>
-
     <mvc:resources mapping="/stylesheets/**" location="/resources/stylesheets/" />
     <mvc:resources mapping="/images/**" location="/resources/images/" />
 
@@ -18,7 +17,6 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
     <mvc:annotation-driven />
 
 </beans>
