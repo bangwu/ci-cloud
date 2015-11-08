@@ -37,4 +37,14 @@ public class UserServiceImpl implements UserService {
         User oldUser = userMapper.findUserByName(user.getUsername());
         return user.equals(oldUser);
     }
+
+    @Override
+    public User findUserByName(String username) {
+        return userMapper.findUserByName(username);
+    }
+
+    @Override
+    public User findByUserId(String userId) {
+        return userMapper.findByUserId(userId);
+    }
 }

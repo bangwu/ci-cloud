@@ -11,4 +11,7 @@ public interface UserMapper {
 
     @Select("select id, username, password from users where username=#{username} limit 1")
     User findUserByName(String username);
+
+    @Select("select id, username, password from users where id=#{userId} limit 1")
+    User findByUserId(String userId);
 }

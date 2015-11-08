@@ -7,4 +7,8 @@ public interface UserService {
     boolean save(User user);
 
     boolean findUser(User user);
+
+    User findUserByName(String username);
+
+    User findByUserId(String userId);
 }
