@@ -12,6 +12,7 @@
     <context:component-scan base-package="com.cloud.ci"/>
     <mvc:resources mapping="/stylesheets/**" location="/resources/stylesheets/" />
     <mvc:resources mapping="/images/**" location="/resources/images/" />
+    <mvc:resources mapping="/javascript/**" location="/resources/javascript/" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>

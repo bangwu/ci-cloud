@@ -43,19 +43,22 @@ public class DockerPs extends Docker{
         bufferedReader.close();
         inputStreamReader.close();
         inputStream.close();
-        String[] containerFields = containerId.toString().split("        ");
+        String[] containerFields = containerId.toString().split("\\s{3,}");
         System.out.println(containerFields.length);
-        String[] ports = containerFields[3].split("   ");
         Container container =new Container()
-                .setId(containerFields[0])
-                .setImage(containerFields[1])
+                .setId(containerFields[0]).setImage(containerFields[1])
                 .setCommand(containerFields[2])
                 .setCreated(new Date())
                 .setStatus("up")
-                .setPort(Long.parseLong(ports[2].split("->")[1].split("/")[0]))
-                .setHostPort(Long.parseLong(ports[2].split("->")[0].split(":")[1]))
-                .setName(ports[3]);
+                .setPort(Long.parseLong(containerFields[5].split("->")[1].split("/")[0]))
+                .setHostPort(Long.parseLong(containerFields[5].split("->")[0].split(":")[1]))
+                .setName(containerFields[6]);
         return container;
+    }
+
+    public static void main(String[] args){
+        DockerPs dockerPs = new DockerPs();
+        System.out.println(dockerPs.findContainerById("d40d2bc59ce8c494fbca2193ae91bc3d479b9d75dc4924c4ba97df50bddf973c"));
     }
 
 }
